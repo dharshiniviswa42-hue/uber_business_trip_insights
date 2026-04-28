@@ -160,11 +160,29 @@ plt.show()
 
 ```python
 df[df["MILES"] > 100]
+
+![Miles Outliers](miles_outliers.png)
+
+** Outlier Analysis:**
+> When we filtered trips with MILES > 100, we found 
+> 16 unusually long trips — including Row 1155 which 
+> shows 12,204 miles. This is clearly a data error 
+> (a Totals row accidentally included in the dataset).
+> 
+> **Finding:** Only 16 out of 1,156 trips exceed 
+> 100 miles — meaning 98.6% of all trips are 
+> short distance.
+>
+> **Action Taken:** Filtered MILES > 100 as outliers 
+> before plotting Miles Distribution chart to ensure 
+> accurate visualization of real trip patterns.
+
+ **Business Decision:**
+> Long distance trips (100+ miles) are rare but 
+> expensive. Company should set a policy requiring 
+> manager approval for any Uber trip exceeding 
+> 50 miles to control costs.
 ```
-
->  Row 1155 shows 12,204 miles — a data error (Totals row). This outlier was filtered out before plotting the distribution chart.
-
----
 
 ###  Miles Distribution
 
