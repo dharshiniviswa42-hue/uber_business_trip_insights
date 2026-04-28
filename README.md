@@ -25,7 +25,7 @@ df.head()
 df.info()
 ```
 
-![Dataset Info](images/data_info.png)
+![Dataset Info](data_info.png)
 
 ---
 
@@ -59,8 +59,6 @@ df["PURPOSE"] = df["PURPOSE"].fillna("Unknown")
 df["PURPOSE"].isnull().sum()
 ```
 
-![Purpose Null Fixed](images/purpose_counts.png)
-
 > All 503 empty PURPOSE values are now labeled as **"Unknown"** — no data is lost, and analysis remains accurate! ✅
 
 ### ⏱️ Creating New Columns
@@ -80,7 +78,7 @@ df['DAY'] = df['START_DATE'].dt.day_name()
 df['HOUR'] = df['START_DATE'].dt.hour.astype(int)
 ```
 
-![Duration Output](images/duration_output.png)
+![Duration Output](duration_output.png)
 
 ---
 
@@ -97,7 +95,9 @@ plt.ylabel("Count")
 plt.show()
 ```
 
-![Category Chart](images/chart1_category.png)
+![Category Value Counts](category_value.png)
+
+![Category Chart](chart1_category.png)
 
 **💼 Business Decision:**
 > 93% of trips are Business trips. Company should open a dedicated corporate Uber account to manage and reduce travel expenses efficiently.
@@ -115,9 +115,7 @@ plt.ylabel("Count")
 plt.show()
 ```
 
-![Purpose Counts](images/pa4.png)
-
-![Purpose Chart](images/chart2_purpose.png)
+![Purpose Chart](chart2_purpose.png)
 
 **💼 Business Decision:**
 > Meeting is the most common trip purpose (187 trips). Company can reduce costs by encouraging virtual meetings for short-distance travel.
@@ -134,7 +132,7 @@ plt.ylabel("Number of Trips")
 plt.show()
 ```
 
-![Month Chart](images/chart3_month.png)
+![Month Chart](chart3_month.png)
 
 **💼 Business Decision:**
 > December has the highest trips (145). Company should plan travel budget allocation for peak months — August, December, and November.
@@ -147,8 +145,6 @@ plt.show()
 df[df["MILES"] > 100]
 ```
 
-![Miles Outliers](images/miles_outliers.png)
-
 > ⚠️ Row 1155 shows 12,204 miles — a data error (Totals row). This outlier was filtered out before plotting the distribution chart.
 
 ---
@@ -158,7 +154,7 @@ df[df["MILES"] > 100]
 ```python
 import matplotlib.pyplot as plt
 plt.figure(figsize=(8,5))
-df[df['MILES'] < 100]['MILES'].plot(kind='hist', bins=30, 
+df[df['MILES'] < 100]['MILES'].plot(kind='hist', bins=30,
                                     color='steelblue', edgecolor='black')
 plt.title('Miles Distribution (Under 100 miles)')
 plt.xlabel('Miles')
@@ -167,7 +163,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![Miles Distribution](images/chart4_miles_dist.png)
+![Miles Distribution](chart4_miles_dist.png)
 
 **💼 Business Decision:**
 > Most trips are under 10 miles. Company should consider cab pooling or alternative transport for very short trips to save cost.
@@ -187,9 +183,9 @@ hour_counts = df['HOUR'].value_counts().sort_index()
 print(hour_counts)
 ```
 
-![Hour Chart](images/chart5_hour.png)
+![Hour Chart](chart5_hour.png)
 
-![Hour Counts](images/hour_counts.png)
+![Hour Counts](hour_counts.png)
 
 **💼 Business Decision:**
 > Peak hours are 1 PM – 6 PM (Hour 13–18). Company should pre-book Uber during these hours to avoid surge pricing and reduce employee wait time.
@@ -199,10 +195,7 @@ print(hour_counts)
 ### 7️⃣ Trips by Day of Week
 
 ```python
-df['START_DATE'] = pd.to_datetime(df['START_DATE'], errors='coerce')
 df['DAY'] = df['START_DATE'].dt.day_name()
-df['DAY'].value_counts()
-
 day_order = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
 day_counts = df['DAY'].value_counts().reindex(day_order)
 
@@ -214,9 +207,9 @@ plt.ylabel('Number of Trips')
 plt.show()
 ```
 
-![Day Counts](images/day_counts.png)
+![Day Counts](day_counts.png)
 
-![Day Chart](images/chart6_day.png)
+![Day Chart](chart6_day.png)
 
 **💼 Business Decision:**
 > Friday has the most trips (206). Company should ensure maximum Uber availability on Fridays and pre-schedule rides for regular Friday meetings.
@@ -237,9 +230,9 @@ plt.tight_layout()
 plt.show()
 ```
 
-![Avg Miles Output](images/avg_miles_output.png)
+![Avg Miles Output](avg_miles_output.png)
 
-![Avg Miles Chart](images/chart7_avg_miles.png)
+![Avg Miles Chart](chart7_avg_miles.png)
 
 **💼 Business Decision:**
 > Commute trips average 180 miles — the highest of all purposes. Company should negotiate special long-distance corporate rates with Uber for commute and customer visit trips.
@@ -260,7 +253,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-![Total Miles Chart](images/chart8_total_miles.png)
+![Total Miles Chart](chart8_total_miles.png)
 
 **💼 Business Decision:**
 > Business trips account for 11,487 miles (94% of total). A dedicated Uber for Business account with bulk mileage plans would significantly cut travel costs.
@@ -279,4 +272,7 @@ plt.show()
 | 43% Unknown purpose | Mandate trip purpose entry |
 | Dec & Aug peak months | Plan travel budget accordingly |
 
- Na copy pannikira 🤣 
+
+
+
+
