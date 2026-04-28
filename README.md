@@ -204,7 +204,7 @@ print(hour_counts)
 
 ![Hour Counts](hour_counts.png)
 
-** Business Decision:**
+ Business Decision:
 > Peak hours are 1 PM – 6 PM (Hour 13–18). Company should pre-book Uber during these hours to avoid surge pricing and reduce employee wait time.
 
 ---
@@ -251,7 +251,7 @@ plt.show()
 
 ![Avg Miles Chart](chart7_avg_miles.png)
 
-** Business Decision:**
+ Business Decision:
 > Commute trips average 180 miles — the highest of all purposes. Company should negotiate special long-distance corporate rates with Uber for commute and customer visit trips.
 
 ---
