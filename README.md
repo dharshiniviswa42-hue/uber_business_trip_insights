@@ -228,7 +228,7 @@ plt.show()
 
 ![Day Chart](chart6_day.png)
 
-** Business Decision:**
+ Business Decision:
 > Friday has the most trips (206). Company should ensure maximum Uber availability on Fridays and pre-schedule rides for regular Friday meetings.
 
 ---
