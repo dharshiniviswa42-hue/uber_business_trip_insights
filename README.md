@@ -1,14 +1,14 @@
-# 🚗 Uber Business Trip Insights
+#  Uber Business Trip Insights
 
-## 📌 Project Overview
+##  Project Overview
 This project performs Exploratory Data Analysis (EDA) on Uber trip data from 2016 using Python, Pandas, and Matplotlib. The goal is to uncover business travel patterns and provide actionable business decisions for cost optimization and resource planning.
 
-## 📂 Dataset
+## Dataset
 - **Source:** Uber Dataset (2016)
 - **Records:** 1,156 trips
 - **Columns:** START_DATE, END_DATE, CATEGORY, START, STOP, MILES, PURPOSE
 
-## 🛠️ Tools Used
+##  Tools Used
 - Python
 - Pandas
 - Matplotlib
@@ -16,7 +16,7 @@ This project performs Exploratory Data Analysis (EDA) on Uber trip data from 201
 
 ---
 
-## 🧹 Step 1 — Data Loading & Exploration
+##  Step 1 — Data Loading & Exploration
 
 ```python
 import pandas as pd
@@ -29,9 +29,9 @@ df.info()
 
 ---
 
-## 🧼 Step 2 — Data Cleaning
+##  Step 2 — Data Cleaning
 
-### 🔍 Before Cleaning — Missing Values
+###  Before Cleaning — Missing Values
 
 ```python
 df.isnull().sum()
@@ -47,9 +47,9 @@ df.isnull().sum()
 | MILES | 0 |
 | PURPOSE | 503 |
 
-> ⚠️ PURPOSE column has 503 missing values — almost 43% of total data!
+>  PURPOSE column has 503 missing values — almost 43% of total data!
 
-### ✅ After Cleaning — Filling Empty Values
+###  After Cleaning — Filling Empty Values
 
 ```python
 # Fill missing PURPOSE with 'Unknown'
@@ -59,7 +59,7 @@ df["PURPOSE"] = df["PURPOSE"].fillna("Unknown")
 df["PURPOSE"].isnull().sum()
 ```
 
-> All 503 empty PURPOSE values are now labeled as **"Unknown"** — no data is lost, and analysis remains accurate! ✅
+> All 503 empty PURPOSE values are now labeled as **"Unknown"** — no data is lost, and analysis remains accurate 
 
 ### ⏱️ Creating New Columns
 
@@ -82,9 +82,9 @@ df['HOUR'] = df['START_DATE'].dt.hour.astype(int)
 
 ---
 
-## 📊 Step 3 — Analysis & Visualizations
+##  Step 3 — Analysis & Visualizations
 
-### 1️⃣ Business vs Personal Trips
+###  Business vs Personal Trips
 
 ```python
 df["CATEGORY"].value_counts()
@@ -99,12 +99,12 @@ plt.show()
 
 ![Category Chart](chart1_category.png)
 
-**💼 Business Decision:**
+**Business Decision:**
 > 93% of trips are Business trips. Company should open a dedicated corporate Uber account to manage and reduce travel expenses efficiently.
 
 ---
 
-### 2️⃣ Trip Purpose Distribution
+###  Trip Purpose Distribution
 
 ```python
 df["PURPOSE"].value_counts()
@@ -117,12 +117,12 @@ plt.show()
 
 ![Purpose Chart](chart2_purpose.png)
 
-**💼 Business Decision:**
+** Business Decision:**
 > Meeting is the most common trip purpose (187 trips). Company can reduce costs by encouraging virtual meetings for short-distance travel.
 
 ---
 
-### 3️⃣ Trips per Month
+###  Trips per Month
 
 ```python
 df['MONTH'].value_counts().sort_index().plot(kind='bar')
@@ -134,22 +134,22 @@ plt.show()
 
 ![Month Chart](chart3_month.png)
 
-**💼 Business Decision:**
+** Business Decision:**
 > December has the highest trips (145). Company should plan travel budget allocation for peak months — August, December, and November.
 
 ---
 
-### 4️⃣ Outlier Detection — Miles > 100
+###  Outlier Detection — Miles > 100
 
 ```python
 df[df["MILES"] > 100]
 ```
 
-> ⚠️ Row 1155 shows 12,204 miles — a data error (Totals row). This outlier was filtered out before plotting the distribution chart.
+>  Row 1155 shows 12,204 miles — a data error (Totals row). This outlier was filtered out before plotting the distribution chart.
 
 ---
 
-### 5️⃣ Miles Distribution
+###  Miles Distribution
 
 ```python
 import matplotlib.pyplot as plt
@@ -165,12 +165,12 @@ plt.show()
 
 ![Miles Distribution](chart4_miles_dist.png)
 
-**💼 Business Decision:**
+** Business Decision:**
 > Most trips are under 10 miles. Company should consider cab pooling or alternative transport for very short trips to save cost.
 
 ---
 
-### 6️⃣ Trips by Hour of Day
+###  Trips by Hour of Day
 
 ```python
 df['HOUR'].value_counts().sort_index().plot(kind='bar', color='orange')
@@ -187,12 +187,12 @@ print(hour_counts)
 
 ![Hour Counts](hour_counts.png)
 
-**💼 Business Decision:**
+** Business Decision:**
 > Peak hours are 1 PM – 6 PM (Hour 13–18). Company should pre-book Uber during these hours to avoid surge pricing and reduce employee wait time.
 
 ---
 
-### 7️⃣ Trips by Day of Week
+###  Trips by Day of Week
 
 ```python
 df['DAY'] = df['START_DATE'].dt.day_name()
@@ -211,12 +211,12 @@ plt.show()
 
 ![Day Chart](chart6_day.png)
 
-**💼 Business Decision:**
+** Business Decision:**
 > Friday has the most trips (206). Company should ensure maximum Uber availability on Fridays and pre-schedule rides for regular Friday meetings.
 
 ---
 
-### 8️⃣ Average Miles per Trip Purpose
+###  Average Miles per Trip Purpose
 
 ```python
 avg_miles = df.groupby('PURPOSE')['MILES'].mean().sort_values(ascending=False)
@@ -234,12 +234,12 @@ plt.show()
 
 ![Avg Miles Chart](chart7_avg_miles.png)
 
-**💼 Business Decision:**
+** Business Decision:**
 > Commute trips average 180 miles — the highest of all purposes. Company should negotiate special long-distance corporate rates with Uber for commute and customer visit trips.
 
 ---
 
-### 9️⃣ Total Miles — Business vs Personal
+###  Total Miles — Business vs Personal
 
 ```python
 total_miles = df.groupby('CATEGORY')['MILES'].sum()
@@ -255,12 +255,12 @@ plt.show()
 
 ![Total Miles Chart](chart8_total_miles.png)
 
-**💼 Business Decision:**
+** Business Decision:**
 > Business trips account for 11,487 miles (94% of total). A dedicated Uber for Business account with bulk mileage plans would significantly cut travel costs.
 
 ---
 
-## 🎯 Key Business Recommendations
+##  Key Business Recommendations
 
 | Finding | Recommendation |
 |---|---|
