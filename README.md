@@ -116,7 +116,7 @@ plt.show()
 
 ![Category Chart](chart1_category.png)
 
-**Business Decision:**
+Business Decision:
 > 93% of trips are Business trips. Company should open a dedicated corporate Uber account to manage and reduce travel expenses efficiently.
 
 ---
