@@ -61,7 +61,7 @@ df["PURPOSE"].isnull().sum()
 
 > All 503 empty PURPOSE values are now labeled as **"Unknown"** — no data is lost, and analysis remains accurate 
 
-### ⏱️ Creating New Columns
+###  Creating New Columns
 
 ```python
 # Convert dates to datetime
