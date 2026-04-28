@@ -81,18 +81,18 @@ df['HOUR'] = df['START_DATE'].dt.hour.astype(int)
 ![Duration Output](duration_output.png)
 
 
-### 🔹 Explanation
+###  Explanation
 
 - Converted `START_DATE` and `END_DATE` into datetime format  
 - Created `DURATION_MIN` to calculate trip duration  
 - Extracted `MONTH`, `DAY`, and `HOUR` for time analysis  
 
-### 🔹 Insight
+###  Insight
 
 - Trips have different durations (short & long rides)  
 - Time features help find peak hours and busy days  
 
-### 🔹 Business Use
+###  Business Use
 
 - Identify peak travel time  
 - Improve driver availability  
@@ -182,7 +182,7 @@ plt.show()
 
 ![Miles Distribution](chart4_miles_dist.png)
 
-** Business Decision:**
+ Business Decision:
 > Most trips are under 10 miles. Company should consider cab pooling or alternative transport for very short trips to save cost.
 
 ---
@@ -272,7 +272,7 @@ plt.show()
 
 ![Total Miles Chart](chart8_total_miles.png)
 
-** Business Decision:**
+ Business Decision:
 > Business trips account for 11,487 miles (94% of total). A dedicated Uber for Business account with bulk mileage plans would significantly cut travel costs.
 
 ---
