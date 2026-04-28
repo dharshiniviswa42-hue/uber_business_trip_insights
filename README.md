@@ -80,6 +80,23 @@ df['HOUR'] = df['START_DATE'].dt.hour.astype(int)
 
 ![Duration Output](duration_output.png)
 
+
+### 🔹 Explanation
+
+- Converted `START_DATE` and `END_DATE` into datetime format  
+- Created `DURATION_MIN` to calculate trip duration  
+- Extracted `MONTH`, `DAY`, and `HOUR` for time analysis  
+
+### 🔹 Insight
+
+- Trips have different durations (short & long rides)  
+- Time features help find peak hours and busy days  
+
+### 🔹 Business Use
+
+- Identify peak travel time  
+- Improve driver availability  
+- Optimize business decisions  
 ---
 
 ##  Step 3 — Analysis & Visualizations
