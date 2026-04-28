@@ -134,7 +134,7 @@ plt.show()
 
 ![Purpose Chart](chart2_purpose.png)
 
-** Business Decision:**
+ Business Decision:
 > Meeting is the most common trip purpose (187 trips). Company can reduce costs by encouraging virtual meetings for short-distance travel.
 
 ---
@@ -151,7 +151,7 @@ plt.show()
 
 ![Month Chart](chart3_month.png)
 
-** Business Decision:**
+ Business Decision:
 > December has the highest trips (145). Company should plan travel budget allocation for peak months — August, December, and November.
 
 ---
