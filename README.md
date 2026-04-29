@@ -160,7 +160,7 @@ plt.show()
 
 ```python
 df[df["MILES"] > 100]
-
+```
 ![Miles Outliers](miles_outliers.png)
 
 ** Outlier Analysis:**
@@ -182,7 +182,7 @@ df[df["MILES"] > 100]
 > expensive. Company should set a policy requiring 
 > manager approval for any Uber trip exceeding 
 > 50 miles to control costs.
-```
+
 
 ###  Miles Distribution
 
