@@ -163,7 +163,7 @@ df[df["MILES"] > 100]
 ```
 ![Miles Outliers](miles_outliers.png)
 
-** Outlier Analysis:**
+ Outlier Analysis:
 > When we filtered trips with MILES > 100, we found 
 > 16 unusually long trips — including Row 1155 which 
 > shows 12,204 miles. This is clearly a data error 
